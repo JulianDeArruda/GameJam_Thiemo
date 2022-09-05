@@ -8,11 +8,11 @@ public class CharacterController : MonoBehaviour
 
     private Rigidbody2D body;
     private BoxCollider2D boxCollider;
-    private Animator anim;
+    //private Animator anim;
 
     private void Awake()
     {
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
 
@@ -23,7 +23,7 @@ public class CharacterController : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-        body.velocity = new Vector2(horizontalInput * speed, verticalInput * speed);
+        body.velocity = new Vector2(horizontalInput * speed, verticalInput * speed) ;
 
         #region Flip Character Model
         //Flip Player
@@ -34,7 +34,7 @@ public class CharacterController : MonoBehaviour
         #endregion
 
         //Animator Parameters
-        anim.SetBool("walking",horizontalInput != 0);
+        //anim.SetBool("walking",horizontalInput != 0);
 
     }
 }
