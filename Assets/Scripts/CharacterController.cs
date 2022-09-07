@@ -90,11 +90,9 @@ public class CharacterController : MonoBehaviour
 
     public void addOil(float extraOil)
     {
-        Debug.Log("Oil was " + oil);
         if ((oil + extraOil) <= maxOil)
             oil += extraOil;
         else
             oil = maxOil;
-        Debug.Log("     ...and is now " + oil);
     }
 }
