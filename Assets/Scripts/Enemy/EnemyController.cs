@@ -31,7 +31,7 @@ public class EnemyController : MonoBehaviour
             //Debug.Log("Found Barrier");
         }else if (shootRaycastAtPlayer(lightLayer).collider != null)
         {
-            Debug.Log("Found Light");
+           // Debug.Log("Found Light");
         }else if (shootRaycastAtPlayer(playerLayer).collider != null)
         {
             Debug.Log("Found Player");

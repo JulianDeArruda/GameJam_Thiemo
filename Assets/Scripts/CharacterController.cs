@@ -12,6 +12,8 @@ public class CharacterController : MonoBehaviour
 
     private Rigidbody2D body;
 
+    Vector2 _move;
+
     private void Awake()
     {
         Instance = this;
@@ -25,7 +27,7 @@ public class CharacterController : MonoBehaviour
         #region general movement
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-        body.velocity = new Vector2(horizontalInput * speed, verticalInput * speed) ;
+        _move = new Vector2(horizontalInput, verticalInput) ;
         #endregion
 
         #region Flip Character Model
@@ -41,6 +43,11 @@ public class CharacterController : MonoBehaviour
         //Animator Parameters
         //anim.SetBool("walking",horizontalInput != 0);
 
+    }
+
+    private void FixedUpdate()
+    {
+        body.MovePosition(body.position + (_move * speed * Time.deltaTime));
     }
 
     public void notifyPlayer()
