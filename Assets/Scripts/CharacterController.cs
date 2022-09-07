@@ -11,18 +11,12 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private GameObject exclamationmark;
 
     private Rigidbody2D body;
-    private CapsuleCollider2D capsuleCollider;
-    //private Animator anim;
-    private bool interactiveToolInRange;
-    private GameObject toolInRange;
 
     private void Awake()
     {
         Instance = this;
         //anim = GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
-        capsuleCollider = GetComponent<CapsuleCollider2D>();
-        interactiveToolInRange = false;
     }
 
     // Update is called once per frame
