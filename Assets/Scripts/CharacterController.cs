@@ -88,5 +88,13 @@ public class CharacterController : MonoBehaviour
         exclamationmark.SetActive(false);
     }
 
-
+    public void addOil(float extraOil)
+    {
+        Debug.Log("Oil was " + oil);
+        if ((oil + extraOil) <= maxOil)
+            oil += extraOil;
+        else
+            oil = maxOil;
+        Debug.Log("     ...and is now " + oil);
+    }
 }
