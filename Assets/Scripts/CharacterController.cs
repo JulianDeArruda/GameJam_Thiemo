@@ -7,9 +7,8 @@ public class CharacterController : MonoBehaviour
     public static CharacterController Instance;
 
     [SerializeField] private float speed = 5;
-    [SerializeField] private GameObject eElement;
-    [SerializeField] private GameObject qElement;
     [SerializeField] private LayerMask interactiveLayer;
+    [SerializeField] private GameObject exclamationmark;
 
     private Rigidbody2D body;
     private CapsuleCollider2D capsuleCollider;
@@ -43,60 +42,21 @@ public class CharacterController : MonoBehaviour
             transform.localScale = new Vector3(-1,1,1);
         #endregion
 
-        #region basic interaction
 
-        if (Input.GetKeyDown(KeyCode.E))
-            interaction();
-        if (Input.GetKeyUp(KeyCode.E))
-            eLetGo();
-        if (Input.GetKeyDown(KeyCode.Q))
-            qPressedDown();
-        if (Input.GetKeyUp(KeyCode.Q))
-            qLetGo();
-
-        #endregion
 
         //Animator Parameters
         //anim.SetBool("walking",horizontalInput != 0);
 
     }
 
-    private void interaction()
+    public void notifyPlayer()
     {
-        eElement.SetActive(true);
-
-        if (interactiveToolInRange)
-        {
-
-        }
+        exclamationmark.SetActive(true);
     }
 
-    private void eLetGo()
+    public void deNotifyPlayer()
     {
-        eElement.SetActive(false);
-    }
-
-    private void qPressedDown()
-    {
-        qElement.SetActive(true);
-    }
-
-    private void qLetGo()
-    {
-        qElement.SetActive(false);
-    }
-
-    public void setInteranciveToolInRange(bool isToolInRange, GameObject tool)
-    {
-        interactiveToolInRange = isToolInRange;
-        if (isToolInRange == true)
-        {
-            toolInRange = tool;
-        }
-        else
-        {
-            toolInRange = null;
-        }
+        exclamationmark.SetActive(false);
     }
 
 
