@@ -9,15 +9,19 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private float speed = 5;
     [SerializeField] private LayerMask interactiveLayer;
     [SerializeField] private GameObject exclamationmark;
+    [SerializeField] GameObject lamp;
 
+    public float maxOil = 120;
+    public float oil = 10;
+    private bool lightOn;    
     private Rigidbody2D body;
-
-    Vector2 _move;
+    private Vector2 _move;
 
     private void Awake()
     {
         Instance = this;
         //anim = GetComponent<Animator>();
+        lightOn = false;
         body = GetComponent<Rigidbody2D>();
     }
 
@@ -38,7 +42,31 @@ public class CharacterController : MonoBehaviour
             transform.localScale = new Vector3(-1,1,1);
         #endregion
 
-
+        #region oil management
+        if (oil <= 0)
+        {
+            lightOn = false;
+            lamp.SetActive(false);
+            oil = 0;
+        }
+        if (Input.GetKeyDown(KeyCode.Q) && oil > 0)
+        {
+            if (lightOn == false)
+            {
+                lightOn = true;
+                lamp.SetActive(true);
+            }
+            else
+            {
+                lightOn = false;
+                lamp.SetActive(false);
+            }
+        }
+        if (lightOn)
+        {
+            oil -= Time.deltaTime;
+        }
+        #endregion
 
         //Animator Parameters
         //anim.SetBool("walking",horizontalInput != 0);
