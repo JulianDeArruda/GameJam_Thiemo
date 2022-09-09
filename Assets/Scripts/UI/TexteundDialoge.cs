@@ -29,8 +29,8 @@ public class TexteundDialoge : MonoBehaviour
     {
         setVariable();
         Sprechblase.transform.DOMove(_Positions[0].position, speed).SetEase(Ease.OutBounce);
-        _up = true;
-
+        _up = true; 
+        Time.timeScale = 0f;
     }
 
     public void DownAnimation()
@@ -38,7 +38,24 @@ public class TexteundDialoge : MonoBehaviour
         
         Sprechblase.transform.DOMove(_Positions[1].position, speed).OnComplete(setVariable).SetEase(Ease.InCirc);
         _up = false;
+        Time.timeScale = 1f;
+    }
 
+    public void Activate()
+    {
+        if (_up)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                DownAnimation();
+                
+            }
+        }
+        else
+        {
+            UpAnimation();
+           
+        }
     }
 
     public virtual void setVariable()
