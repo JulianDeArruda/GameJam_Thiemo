@@ -47,6 +47,7 @@ public class CharacterController : MonoBehaviour
         {
             lightOn = false;
             lamp.SetActive(false);
+            SoundManager.Instance.playSound(Sounds.LampOff);
             oil = 0;
         }
         if (Input.GetKeyDown(KeyCode.Q) && oil > 0)
@@ -54,11 +55,13 @@ public class CharacterController : MonoBehaviour
             if (lightOn == false)
             {
                 lightOn = true;
+                SoundManager.Instance.playSound(Sounds.LampOn);
                 lamp.SetActive(true);
             }
             else
             {
                 lightOn = false;
+                SoundManager.Instance.playSound(Sounds.LampOff);
                 lamp.SetActive(false);
             }
         }
