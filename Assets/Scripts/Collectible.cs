@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
+  
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,15 @@ public class Collectible : MonoBehaviour
             if (gameObject.tag == "oil")
             {
                 CharacterController.Instance.addOil(30);
+            }
+            if (gameObject.tag == "Key")
+            {
+                Inventar.Singleton.activateKey();
+            }
+            if (gameObject.tag == "Letter")
+            {
+                TexteundDialoge _text = GetComponent<TexteundDialoge>();
+                _text.Activate();
             }
 
             Destroy(this.gameObject);
