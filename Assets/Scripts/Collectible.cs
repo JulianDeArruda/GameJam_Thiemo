@@ -5,7 +5,7 @@ using UnityEngine;
 public class Collectible : MonoBehaviour
 {
   
-    private void Collect()
+    public void Collect()
     {
        
             if (gameObject.tag == "oil")

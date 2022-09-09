@@ -17,7 +17,7 @@ public class DoorController : MonoBehaviour
         _text.setText("I need a Key!");
     }
 
-    private void Open()
+    public void Open()
     {
         if (needsKey)
         {
