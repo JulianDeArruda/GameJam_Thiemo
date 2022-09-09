@@ -10,8 +10,6 @@ public class EnemyController : MonoBehaviour
     [SerializeField] public LayerMask lightLayer;
     [SerializeField] public LayerMask barrierLayer;
 
-    private CapsuleCollider2D capsuleCollider;
-
 
     // Start is called before the first frame update
     void Start()
