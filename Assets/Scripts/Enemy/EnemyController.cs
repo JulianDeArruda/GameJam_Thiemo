@@ -6,9 +6,9 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] public float detectionRange = 6;
     [SerializeField] public GameObject player;    
-    [SerializeField] private LayerMask playerLayer;
-    [SerializeField] private LayerMask lightLayer;
-    [SerializeField] private LayerMask barrierLayer;
+    [SerializeField] public LayerMask playerLayer;
+    [SerializeField] public LayerMask lightLayer;
+    [SerializeField] public LayerMask barrierLayer;
 
     private CapsuleCollider2D capsuleCollider;
 
@@ -25,7 +25,7 @@ public class EnemyController : MonoBehaviour
         search();
     }
 
-    private void search()
+    public virtual void search()
     {
         if (shootRaycastAtPlayer(barrierLayer).collider != null){
             //Debug.Log("Found Barrier");
@@ -38,7 +38,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private RaycastHit2D shootRaycastAtPlayer(LayerMask layermask)
+    public RaycastHit2D shootRaycastAtPlayer(LayerMask layermask)
     {
         return Physics2D.Raycast(this.gameObject.transform.position, player.transform.position, detectionRange,layermask);
     }
