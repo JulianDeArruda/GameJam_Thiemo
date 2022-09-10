@@ -45,10 +45,13 @@ public class CharacterController : MonoBehaviour
         #region oil management
         if (oil <= 0)
         {
-            lightOn = false;
-            lamp.SetActive(false);
-            SoundManager.Instance.playSound(Sounds.LampOff);
-            oil = 0;
+            if (lightOn == true)
+            {
+                lightOn = false;
+                lamp.SetActive(false);
+                SoundManager.Instance.playSound(Sounds.LampOff);
+                oil = 0;
+            }
         }
         if (Input.GetKeyDown(KeyCode.Q) && oil > 0)
         {
