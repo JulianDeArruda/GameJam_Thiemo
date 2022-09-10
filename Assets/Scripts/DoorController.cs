@@ -14,7 +14,7 @@ public class DoorController : MonoBehaviour
     {
         
         _text = GetComponent<Sprechblasen>();
-        _text.setText("I need a Key!");
+        
     }
 
     public void Open()
@@ -28,6 +28,7 @@ public class DoorController : MonoBehaviour
             }
             else
             {
+                _text.setText("I need a Key!");
                 _text.Activate();
             }
         }
@@ -40,7 +41,7 @@ public class DoorController : MonoBehaviour
     private void doorOpens()
     {
         this.gameObject.GetComponent<SpriteRenderer>().sprite = door_open;
-        this.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
 
    
