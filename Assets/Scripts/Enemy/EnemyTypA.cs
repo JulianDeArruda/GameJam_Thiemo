@@ -16,6 +16,7 @@ public class EnemyTypA : EnemyController
         }
         else if (shootRaycastAtPlayer(playerLayer).collider != null)
         {
+
             //Debug.Log(" Game Over ");
             //Spiel vorbei
         }

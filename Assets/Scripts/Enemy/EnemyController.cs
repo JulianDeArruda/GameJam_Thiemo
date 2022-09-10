@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class EnemyController : MonoBehaviour
 {
@@ -10,6 +11,21 @@ public class EnemyController : MonoBehaviour
     [SerializeField] public LayerMask lightLayer;
     [SerializeField] public LayerMask barrierLayer;
 
+    private Transform[] _paths;
+    [SerializeField] float movementSpeed;
+
+    Vector3 _Point;
+    private int pathpoints = 0;
+    [SerializeField] GameObject _parent;
+
+    private bool playerFound;
+
+    private void Awake()
+    {
+        playerFound = false;
+        _paths = _parent.transform.GetComponentsInChildren<Transform>();
+        doMove();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -40,4 +56,27 @@ public class EnemyController : MonoBehaviour
     {
         return Physics2D.Raycast(this.gameObject.transform.position, player.transform.position, detectionRange,layermask);
     }
+
+    private void doMove()
+    {
+        NewPoint();
+        transform.DOMove(_Point, movementSpeed).OnComplete(doMove).SetEase(Ease.InSine);
+    }
+
+    private void NewPoint()
+    {
+
+        _Point = _paths[pathpoints].position;
+        transform.right = _Point - transform.position;
+        if (pathpoints >= _paths.Length - 1)
+        {
+            pathpoints = 0;
+        }
+        else
+        {
+            pathpoints++;
+        }
+
+    }
+
 }
