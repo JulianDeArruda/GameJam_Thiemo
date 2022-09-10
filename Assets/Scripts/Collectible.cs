@@ -5,6 +5,7 @@ using UnityEngine;
 public class Collectible : MonoBehaviour
 {
   
+    
     public void Collect()
     {
        
@@ -16,13 +17,19 @@ public class Collectible : MonoBehaviour
             {
                 Inventar.Singleton.activateKey();
             }
-            if (gameObject.tag == "Letter")
-            {
-                TexteundDialoge _text = GetComponent<TexteundDialoge>();
-                _text.Activate();
-            }
+            
 
             Destroy(this.gameObject);
         
+    }
+
+    public void weiter()
+    {
+       if (gameObject.tag == "Letter")
+             {
+            TexteundDialoge _text = GetComponent<TexteundDialoge>();
+            _text.Activate();
+            
+             }
     }
 }

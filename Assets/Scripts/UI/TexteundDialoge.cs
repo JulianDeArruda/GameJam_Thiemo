@@ -14,13 +14,15 @@ public class TexteundDialoge : MonoBehaviour
     private Transform[] _Positions;
 
     public bool _up = false;
+    
 
     public void Awake()
     {
         _Positions = Positions.GetComponentsInChildren<Transform>();
 
     }
-  
+   
+
     private void FixedUpdate()
     {
         if (_up)
@@ -57,7 +59,7 @@ public class TexteundDialoge : MonoBehaviour
         
         Sprechblase.transform.DOMove(_Positions[0].position, speed).OnComplete(setVariable).SetEase(Ease.OutCirc);
        
-        
+       
 
     }
 
