@@ -6,36 +6,26 @@ public class AnimationEnemy : MonoBehaviour
 {
 
     //das Script funktioniert net
-    Animator _animator;
-    float movev;
-    float startv;
-    float moveh;
-    float starth;
-    void Awake()
-    {
-        _animator = GetComponent<Animator>();
-        starth = transform.position.x;
-        startv = transform.position.y;
-    }
+    [SerializeField]SpriteRenderer _sprite;
+    
+   
+    
+    
 
-
-    public void distance()
+    public void adjustGraphics(float inX)
     {
-        movev = startv - transform.position.y; 
-        startv = transform.position.y;
-        moveh = starth - transform.position.x;
-        starth = transform.position.x;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        distance();
-        if(movev != 0 || moveh != 0)
+        if (transform.position.x < inX)
         {
-            _animator.SetBool("Walk", true);
-        } else
+            //Debug.Log("Rechts");
+            _sprite.flipX = true;
+        }
+        else
         {
-            _animator.SetBool("Walk", false);
+            //Debug.Log("Links");
+           
+            _sprite.flipX = false;
         }
     }
+
+   
 }
