@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 91789720959772147}
   - component: {fileID: 91789720959772144}
-  - component: {fileID: 91789720959772145}
+  - component: {fileID: 3451798650580203234}
   m_Layer: 8
   m_Name: Barrel (2)
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 91789720959772150}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.49000168, y: -1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5596327717018399257}
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.5566038, g: 0.35259885, b: 0.17590779, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 12b1a349d6b3e114d8a56944f7be4ea4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -85,8 +85,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &91789720959772145
-CircleCollider2D:
+--- !u!70 &3451798650580203234
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -98,9 +98,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Offset: {x: -0.0000038146973, y: -0.0000009536743}
+  m_Size: {x: 0.34, y: 0.39}
+  m_Direction: 0
 --- !u!1 &91789720978815247
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 91789720978815240}
   - component: {fileID: 91789720978815241}
-  - component: {fileID: 91789720978815246}
+  - component: {fileID: 2649891723981690704}
   m_Layer: 8
   m_Name: Barrel (1)
   m_TagString: Untagged
@@ -128,7 +128,7 @@ Transform:
   m_GameObject: {fileID: 91789720978815247}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.0200005, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5596327717018399257}
@@ -175,8 +175,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.5566038, g: 0.35259885, b: 0.17590779, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 12b1a349d6b3e114d8a56944f7be4ea4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -186,8 +186,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &91789720978815246
-CircleCollider2D:
+--- !u!70 &2649891723981690704
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -199,9 +199,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Offset: {x: 0, y: -0.0000009536743}
+  m_Size: {x: 0.34, y: 0.39}
+  m_Direction: 0
 --- !u!1 &91789721181536527
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,7 +212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 91789721181536520}
   - component: {fileID: 91789721181536521}
-  - component: {fileID: 91789721181536526}
+  - component: {fileID: 5087828918571517669}
   m_Layer: 8
   m_Name: Barrel
   m_TagString: Untagged
@@ -229,7 +229,7 @@ Transform:
   m_GameObject: {fileID: 91789721181536527}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5596327717018399257}
@@ -276,8 +276,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.5566038, g: 0.35259885, b: 0.17590779, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 12b1a349d6b3e114d8a56944f7be4ea4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -287,8 +287,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &91789721181536526
-CircleCollider2D:
+--- !u!70 &5087828918571517669
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -301,8 +301,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 0.34, y: 0.39}
+  m_Direction: 0
 --- !u!1 &6689791043342945170
 GameObject:
   m_ObjectHideFlags: 0

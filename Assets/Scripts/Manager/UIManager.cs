@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
     [SerializeField] Slider oilbar;
     [SerializeField] Image fill;
+    [SerializeField] GameObject Introduction;
 
     private void Awake()
     {
@@ -26,5 +27,17 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         oilbar.value = CharacterController.Instance.oil;
+    }
+
+    public void Intro(bool Start)
+    {
+        if (Start)
+        {
+            Introduction.SetActive(true);
+        }
+        else
+        {
+            Introduction.SetActive(false);
+        }
     }
 }

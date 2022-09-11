@@ -7,6 +7,10 @@ public class Finished : MonoBehaviour
 {
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        SceneManager.LoadScene(0);
+        if(collision.gameObject.tag == "Player")
+        {
+            SceneManager.LoadScene(0);
+        }
+        
     }
 }
