@@ -12,7 +12,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] GameObject lamp;
 
     public float maxOil = 120;
-    public float oil = 10;
+    public float oil = 30;
     private bool lightOn;    
     private Rigidbody2D body;
     private Vector2 _move;
