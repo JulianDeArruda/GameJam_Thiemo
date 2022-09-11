@@ -13,15 +13,17 @@ public class Sprechblasen : TexteundDialoge
 
     public override void setVariable()
     {
-        if (_up)
+        if (!_up)
         {
             textTMP.text = _text;
             CharacterProfile.SetActive(true);
+            _up = true;
         }
         else
         {
             textTMP.text = "";
             CharacterProfile.SetActive(false);
+            _up = false;
         }
     }
 }

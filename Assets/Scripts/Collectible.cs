@@ -4,31 +4,32 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
     
-
-    private void OnTriggerEnter2D(Collider2D collider)
+    public void Collect()
     {
-        Debug.Log(collider.gameObject.tag);
-        if (collider.gameObject.tag == "Player")
-        {
-            string tag = collider.gameObject.tag;
+       
             if (gameObject.tag == "oil")
             {
                 CharacterController.Instance.addOil(30);
             }
+            if (gameObject.tag == "Key")
+            {
+                Inventar.Singleton.activateKey();
+            }
+            
 
             Destroy(this.gameObject);
-        }
+        
+    }
+
+    public void weiter()
+    {
+       if (gameObject.tag == "Letter")
+             {
+            TexteundDialoge _text = GetComponent<TexteundDialoge>();
+            _text.Activate();
+            
+             }
     }
 }
