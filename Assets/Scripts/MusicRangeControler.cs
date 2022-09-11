@@ -17,7 +17,7 @@ public class MusicRangeControler : MonoBehaviour
     public float track3MaxDist;
 
     public GameObject player;
-    public GameObject target;
+    public GameObject target;   
 
     void Update() 
     {

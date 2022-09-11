@@ -22,7 +22,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] public AudioClip ambientSound_1;
     #endregion
 
-    private void Awake()
+    private void Awake() // szenen übergreifende Musik
     {
         if(Instance == null)
         {
