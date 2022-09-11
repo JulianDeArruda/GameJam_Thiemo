@@ -14,12 +14,18 @@ public class TexteundDialoge : MonoBehaviour
     private Transform[] _Positions;
 
     public bool _up = false;
-    
+    float inty0;
+    float inty1;
+    Vector2 zero;
+    Vector2 one;
 
     public void Awake()
     {
         _Positions = Positions.GetComponentsInChildren<Transform>();
-
+        inty0 =_Positions[0].position.y;
+        inty1 = _Positions[1].position.y;
+        zero = new Vector2(Sprechblase.transform.position.x,inty0);
+        one = new Vector2(Sprechblase.transform.position.x,inty1);
     }
    
 
@@ -48,7 +54,7 @@ public class TexteundDialoge : MonoBehaviour
     public void UpAnimation()
     {
         setVariable();
-        Sprechblase.transform.DOMove(_Positions[1].position, speed).OnComplete(stopTime).SetEase(Ease.OutCirc);
+        Sprechblase.transform.DOMove(one, speed).OnComplete(stopTime).SetEase(Ease.OutCirc);
      
     }
 
@@ -57,7 +63,7 @@ public class TexteundDialoge : MonoBehaviour
 
         Time.timeScale = 1f;
         
-        Sprechblase.transform.DOMove(_Positions[0].position, speed).OnComplete(setVariable).SetEase(Ease.OutCirc);
+        Sprechblase.transform.DOMove(zero, speed).OnComplete(setVariable).SetEase(Ease.OutCirc);
        
        
 
