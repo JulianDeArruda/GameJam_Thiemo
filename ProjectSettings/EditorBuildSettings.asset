@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Spielwiese.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Game_Over.unity
+    guid: 7c55ba019da1848449cf4469e6da2d27
+  - enabled: 1
+    path: Assets/Scenes/Testing_layout.unity
+    guid: 78b93813f463bce4ab574ed246b394d4
   m_configObjects: {}
