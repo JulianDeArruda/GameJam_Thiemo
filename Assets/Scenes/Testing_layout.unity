@@ -4090,6 +4090,10 @@ PrefabInstance:
       propertyPath: m_SpriteSortPoint
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5486605692731114536, guid: eb4c8bbecbbc00043a2c96eade8f9bc1, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb4c8bbecbbc00043a2c96eade8f9bc1, type: 3}
 --- !u!1001 &820246022
@@ -9608,6 +9612,10 @@ PrefabInstance:
       propertyPath: playerSource
       value: 
       objectReference: {fileID: 589979985}
+    - target: {fileID: 1764828492586229512, guid: aedbab41f7aec5b4bb351bb9e74b7ae8, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1764828492686147947, guid: aedbab41f7aec5b4bb351bb9e74b7ae8, type: 3}
       propertyPath: fill
       value: 

@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
-  
-    
+    ItemPickUpSound PickUpSound;
+
+    private void Awake()
+    {
+        PickUpSound = GetComponent<ItemPickUpSound>();
+    }
+
     public void Collect()
     {
        
@@ -17,8 +22,7 @@ public class Collectible : MonoBehaviour
             {
                 Inventar.Singleton.activateKey();
             }
-            
-
+        PickUpSound.ItemSound();
             Destroy(this.gameObject);
         
     }
