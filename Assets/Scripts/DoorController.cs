@@ -8,12 +8,14 @@ public class DoorController : MonoBehaviour
     public bool needsKey;
     public Sprechblasen _text;
     [SerializeField] public Sprite door_open;
+    DoorSoundScript DoorAudio;  
    
 
     private void Awake()
     {
         
         _text = GetComponent<Sprechblasen>();
+       DoorAudio = GetComponent<DoorSoundScript>();
         
     }
 
@@ -40,8 +42,10 @@ public class DoorController : MonoBehaviour
 
     private void doorOpens()
     {
+        DoorAudio.DoorSound();
         this.gameObject.GetComponent<SpriteRenderer>().sprite = door_open;
         this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+       
     }
 
    

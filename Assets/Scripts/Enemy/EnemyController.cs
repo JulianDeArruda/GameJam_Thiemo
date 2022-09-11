@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour
     Vector3 _Point;
     private int pathpoints = 0;
     [SerializeField] GameObject _parent;
+    AnimationEnemy animationEnemy;
 
     private bool playerFound;
 
@@ -24,6 +25,7 @@ public class EnemyController : MonoBehaviour
     {
         playerFound = false;
         _paths = _parent.transform.GetComponentsInChildren<Transform>();
+        animationEnemy = GetComponent<AnimationEnemy>();
         doMove();
     }
 
@@ -67,6 +69,7 @@ public class EnemyController : MonoBehaviour
     {
 
         _Point = _paths[pathpoints].position;
+        animationEnemy.adjustGraphics(_Point.x);
         transform.right = _Point - transform.position;
         if (pathpoints >= _paths.Length - 1)
         {
