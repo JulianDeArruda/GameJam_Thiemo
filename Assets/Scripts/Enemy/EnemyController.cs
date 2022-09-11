@@ -56,7 +56,8 @@ public class EnemyController : MonoBehaviour
 
     public RaycastHit2D shootRaycastAtPlayer(LayerMask layermask)
     {
-        return Physics2D.Raycast(this.gameObject.transform.position, player.transform.position, detectionRange,layermask);
+        //return Physics2D.Raycast(this.gameObject.transform.position, player.transform.position, detectionRange,layermask);
+        return Physics2D.Raycast(this.gameObject.transform.position, transform.right, detectionRange, layermask);
     }
 
     private void doMove()
