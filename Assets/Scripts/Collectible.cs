@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
-    ItemPickUpSound PickUpSound;
+
+   private AudioSource audioSource;
+    [SerializeField] AudioClip ItemPickUp;
 
     private void Awake()
     {
-        PickUpSound = GetComponent<ItemPickUpSound>();
+        audioSource = GetComponent<AudioSource>();
     }
-
     public void Collect()
     {
        
@@ -22,7 +23,7 @@ public class Collectible : MonoBehaviour
             {
                 Inventar.Singleton.activateKey();
             }
-        PickUpSound.ItemSound();
+        ItemSound();
             Destroy(this.gameObject);
         
     }
@@ -35,5 +36,11 @@ public class Collectible : MonoBehaviour
             _text.Activate();
             
              }
+    }
+
+    public void ItemSound()
+    {
+        AudioClip clip = ItemPickUp;
+        audioSource.PlayOneShot(clip);
     }
 }

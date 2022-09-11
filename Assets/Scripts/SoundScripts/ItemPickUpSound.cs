@@ -5,13 +5,11 @@ using UnityEngine;
 public class ItemPickUpSound : MonoBehaviour
 {
 
-    private AudioSource audioSource;
+    [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip ItemPickUp;
-    // Start is called before the first frame update
-    private void Awake()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
+    
+    
+ 
 
     // Update is called once per frame
     public void ItemSound()
