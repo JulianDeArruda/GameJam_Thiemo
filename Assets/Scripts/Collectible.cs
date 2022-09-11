@@ -5,13 +5,8 @@ using UnityEngine;
 public class Collectible : MonoBehaviour
 {
 
-   private AudioSource audioSource;
-    [SerializeField] AudioClip ItemPickUp;
-
-    private void Awake()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
+    [SerializeField] AudioSource audioSource;
+  
     public void Collect()
     {
        
@@ -22,8 +17,9 @@ public class Collectible : MonoBehaviour
             if (gameObject.tag == "Key")
             {
                 Inventar.Singleton.activateKey();
+                
             }
-        ItemSound();
+            ItemSound();
             Destroy(this.gameObject);
         
     }
@@ -40,7 +36,9 @@ public class Collectible : MonoBehaviour
 
     public void ItemSound()
     {
-        AudioClip clip = ItemPickUp;
-        audioSource.PlayOneShot(clip);
+       
+        audioSource.Play();
     }
+
+    
 }
