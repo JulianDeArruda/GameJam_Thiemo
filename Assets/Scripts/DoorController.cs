@@ -43,8 +43,9 @@ public class DoorController : MonoBehaviour
     private void doorOpens()
     {
         DoorAudio.DoorSound();
-        this.gameObject.GetComponent<SpriteRenderer>().sprite = door_open;
-        this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        this.gameObject.SetActive(false);
+      //  this.gameObject.GetComponent<SpriteRenderer>().sprite = door_open;
+       // this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
        
     }
 

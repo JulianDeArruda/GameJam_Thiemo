@@ -23,6 +23,9 @@ public class CharacterController : MonoBehaviour
         //anim = GetComponent<Animator>();
         lightOn = false;
         body = GetComponent<Rigidbody2D>();
+
+      FindObjectOfType<UIManager>().Intro(true);
+        
     }
 
     // Update is called once per frame
@@ -74,6 +77,10 @@ public class CharacterController : MonoBehaviour
         }
         #endregion
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            FindObjectOfType<UIManager>().Intro(false);
+        }
         //Animator Parameters
         //anim.SetBool("walking",horizontalInput != 0);
 
