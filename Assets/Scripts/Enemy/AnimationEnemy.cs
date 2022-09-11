@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AnimationEnemy : MonoBehaviour
 {
+
+    //das Script funktioniert net
     Animator _animator;
     float movev;
     float startv;
